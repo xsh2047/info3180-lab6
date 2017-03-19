@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Info3180 - Lab 6</title>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class='shopping-list row' ng-app="myShoppingList" ng-controller="myCtrl">
+            <ul class="list-group">
+                <li class='list-group-item' ng-repeat="x in products">
+                    {{x}}
+                    <span class="glyphicon glyphicon-remove" ng-click="removeItem($index)"></span>
+                </li>
+            </ul>
+            <div class="input-group">
+              <input type="text" class="form-control" ng-model="addMe" placeholder="">
+              <span class="input-group-btn">
+                  <button class="btn btn-success" ng-click="addItem()">
+                      <span class="glyphicon glyphicon-plus"></span>
+                  </button>
+              </span>
+            </div>
+            <p>{{errortext}}</p>
+        </div>
+    </body>
+</html>
